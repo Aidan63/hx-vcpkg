@@ -1,0 +1,7 @@
+{
+    "name": "hxvcpkg",
+    "url": "https://github.com/aidan63/hxvcpkg",
+    "license": "MIT",
+    "version": "1.0.0",
+    "classPath": "src"
+}

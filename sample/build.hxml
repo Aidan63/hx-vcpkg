@@ -1,0 +1,6 @@
+-p src
+-p ../src
+-D HXCPP_M64
+-m Main
+--cpp bin
+--macro hxvcpkg.Vcpkg.install('curl', '8.8.0')

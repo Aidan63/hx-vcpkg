@@ -1,0 +1,32 @@
+<xml>
+    
+    <section if="debug">
+        <copyFile from="${VCPKG_DLL_PATH}" name="libcurl-d.dll"/>
+        <copyFile from="${VCPKG_DLL_PATH}" name="zlibd1.dll"/>
+    </section>
+
+    <section unless="debug">
+        <copyFile from="${VCPKG_DLL_PATH}" name="libcurl.dll"/>
+        <copyFile from="${VCPKG_DLL_PATH}" name="zlib1.dll"/>
+    </section>
+
+    <files id="haxe">
+        <compilerflag value="-I${this_dir}"/>
+        <compilerflag value="-I${VCPKG_INCLUDE_PATH}"/>
+    </files>
+
+    <target id="haxe">
+
+        <section if="debug">
+            <lib name="${VCPKG_LIB_PATH}/libcurl-d.lib"/>
+            <lib name="${VCPKG_LIB_PATH}/zlibd.lib"/>
+        </section>
+
+        <section unless="debug">
+            <lib name="${VCPKG_LIB_PATH}/libcurl.lib"/>
+            <lib name="${VCPKG_LIB_PATH}/zlib.lib"/>
+        </section>
+
+    </target>
+
+</xml>
